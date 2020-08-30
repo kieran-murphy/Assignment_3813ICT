@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Week 4
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+     
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    
+   
+    
+  </style>
+</head>
+<nav class="navbar navbar-inverse" style="background-color: teal;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          
+          
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+
+<div class="container">
+        <h1>Welcome {{username}}!</h1>
+
+    
+        <h2>Username: </h2><p>{{username}}</p>
+        <h2>Email: </h2><p>{{email}}</p>
+        <h2>Birthday: </h2><p>{{birthdate}}</p>
+        <h2>Age: </h2><p>{{age}}</p>
+
+        <a href="/account">Update My Info</a>
+        <br>
+        <br>
+        <div *ngIf="session"><a (click)="logout()" href=""><button class="button ui-button-icon-primary">Logout</button></a></div>
+      </div>
+

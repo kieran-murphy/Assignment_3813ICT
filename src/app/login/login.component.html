@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Week 4
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    
+   
+    
+  </style>
+</head>
+<nav class="navbar navbar-inverse" style="background-color: teal;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          
+          
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+<div class="container">
+  <h3 class="header">Login</h3>
+  <div id="formContent">
+      <br>
+
+
+
+    <form>
+      <input type="text" [(ngModel)]="userDetails.username" id="login" name="login" placeholder="Email">
+      <br>
+      <br>
+      <input type="password" [(ngModel)]="userDetails.password" id="password" name="login" placeholder="Password">
+      <br>
+      <br>
+      <input (click)="loginfunc()" type="submit" value="Log In">
+    </form>
+
+  
+
+  </div>
+</div>
