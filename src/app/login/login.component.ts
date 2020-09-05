@@ -42,8 +42,9 @@ export class LoginComponent implements OnInit {
       if (data.valid) {
         sessionStorage.setItem('userid', data.userid.toString());
         sessionStorage.setItem('username', data.username.toString());
-        sessionStorage.setItem('birthdate', data.birthdate.toString());
-        sessionStorage.setItem('age', data.age.toString());
+        sessionStorage.setItem('role', data.role.toString());
+        //sessionStorage.setItem('birthdate', data.birthdate.toString());
+        //sessionStorage.setItem('age', data.age.toString());
         sessionStorage.setItem('email', data.email.toString());
         this.httpClient.post(BACKEND_URL + '/api/login-success', data, httpOptions)
         .subscribe((m: any) => {});

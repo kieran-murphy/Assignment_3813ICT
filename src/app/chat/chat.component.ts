@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
+
+
 export class ChatComponent implements OnInit {
 
   messagecontent:string="";
@@ -18,8 +20,9 @@ export class ChatComponent implements OnInit {
 
   userid = sessionStorage.getItem('userid');
   username = sessionStorage.getItem('username');
-  birthdate = sessionStorage.getItem('birthdate');
-  age = sessionStorage.getItem('age');
+  role = sessionStorage.getItem('role');
+  //birthdate = sessionStorage.getItem('birthdate');
+  //age = sessionStorage.getItem('age');
   email = sessionStorage.getItem('email');
   session = null;
 
@@ -39,6 +42,7 @@ export class ChatComponent implements OnInit {
   initIoConnection() {
     this.socketService.initSocket();
     this.ioConnection = this.socketService.onMessage()
+    
       .subscribe((message:string) => {
         //add new message to the messages array.
         this.messages.push(message);

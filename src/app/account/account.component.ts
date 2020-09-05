@@ -9,9 +9,10 @@ import { Router } from '@angular/router';
 export class AccountComponent implements OnInit {
 
   username = sessionStorage.getItem('username');
-  birthdate = sessionStorage.getItem('birthdate');
+  //birthdate = sessionStorage.getItem('birthdate');
   age = sessionStorage.getItem('age');
   email = sessionStorage.getItem('email');
+  role = sessionStorage.getItem('role');
   session = null;
 
   constructor(private router: Router) { }
@@ -29,9 +30,11 @@ export class AccountComponent implements OnInit {
   public updateDetails() {
 
     sessionStorage.setItem('username', this.username.toString());
-    sessionStorage.setItem('birthdate', this.birthdate.toString());
-    sessionStorage.setItem('age', this.age.toString());
+    //sessionStorage.setItem('birthdate', this.birthdate.toString());
+    //sessionStorage.setItem('age', this.age.toString());
     sessionStorage.setItem('email', this.email.toString());
+    sessionStorage.setItem('role', this.role.toString());
+    
     this.router.navigateByUrl('profile');
   }
 

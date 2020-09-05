@@ -11,8 +11,8 @@ export class ProfileComponent implements OnInit {
 
   userid = sessionStorage.getItem('userid');
   username = sessionStorage.getItem('username');
-  birthdate = sessionStorage.getItem('birthdate');
-  age = sessionStorage.getItem('age');
+  //birthdate = sessionStorage.getItem('birthdate');
+  role = sessionStorage.getItem('role');
   email = sessionStorage.getItem('email');
   session = null;
 

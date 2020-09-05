@@ -4,8 +4,7 @@ module.exports = function(req, res) {
   {
     'userid': 1,
     'username': 'abc',
-    'birthdate': '01/01/2000',
-    'age': 20,
+    'role': 'Super Admin',
     'email': 'abc@com.au',
     'password': '123',
     'valid': null
@@ -13,8 +12,7 @@ module.exports = function(req, res) {
   {
     'userid': 2,
     'username': 'person',
-    'birthdate': '01/01/2000',
-    'age': 20,
+    'role': 'Super Admin',
     'email': 'person@gmail.com',
     'password': 'password',
     'valid': null
@@ -22,8 +20,7 @@ module.exports = function(req, res) {
   {
     'userid': 3,
     'username': 'john',
-    'birthdate': '01/01/2000',
-    'age': 20,
+    'role': 'Super Admin',
     'email': 'john@gmail.com',
     'password': 'wordpass',
     'valid': null
