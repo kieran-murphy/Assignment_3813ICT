@@ -1,4 +1,4 @@
-module.exports = function(req, res) {
+module.exports = function (req, res) {
 
   let userObj = {
     'userid': req.body.userid,

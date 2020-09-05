@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Week 4
   </title>
@@ -8,65 +9,62 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <style>
-    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
     .navbar {
       margin-bottom: 50px;
       border-radius: 0;
     }
-    
-    
-   
-    
+
   </style>
 </head>
-<nav class="navbar navbar-inverse" style="background-color: teal;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
-        </button>
-        
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          
-          
-          
-        </ul>
-        
-      </div>
-    </div>
-  </nav>
+<nav class="navbar navbar-inverse" style="background-color: black;">
+  <div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>                        
+    </button>
+    
+  </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+      <li><a routerLink="/account" routerLinkActive="active">Account</a></li>
+      <li><a routerLink="/chat" routerLinkActive="active">Chat</a></li>
+      
+    </ul>
+    
+  </div>
+</div>
+</nav>
 
 
 
 <div class="container">
-    <h3 class="header">Login</h3>
-    <div id="formContent">
-        <br>
-  
-  
-  
-        <form>
-            <label for="username">Username</label>
-            <input type="text" [(ngModel)]="username" id="username" name="username" ngModel placeholder="Username" required>
-            <br>
-            <label for="email">Email</label>
-            <input type="text" [(ngModel)]="email" id="email" name="email" placeholder="Email" required>
-            <br>
-            <label for="birthdate">Birthday</label>
-            <input type="text" [(ngModel)]="birthdate" id="birthdate" name="birthdate" placeholder="Birth Date" required>
-            <br>
-            <label for="age">Age</label>
-            <input type="text" [(ngModel)]="age" id="age" name="login" placeholder="age" required>
-            <br>
-            <input (click)="updateDetails()" type="submit" value="Save">
-          </form>
-  
-    
-  
-    </div>
+  <h3 class="header">Edit</h3>
+  <div id="formContent">
+    <br>
+
+
+
+    <form>
+      <label for="username">Username</label>
+      <input type="text" [(ngModel)]="username" id="username" name="username" ngModel placeholder="Username" required>
+      <br>
+      <label for="email">Email</label>
+      <input type="text" [(ngModel)]="email" id="email" name="email" placeholder="Email" required>
+      <br>
+      <label for="birthdate">Birthday</label>
+      <input type="text" [(ngModel)]="birthdate" id="birthdate" name="birthdate" placeholder="Birth Date" required>
+      <br>
+      <label for="age">Age</label>
+      <input type="text" [(ngModel)]="age" id="age" name="login" placeholder="age" required>
+      <br>
+      <input (click)="updateDetails()" type="submit" value="Save">
+    </form>
+
+
+
   </div>
-  
+</div>

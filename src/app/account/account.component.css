@@ -24,3 +24,10 @@ form {
   text-align: right;
   display: inline-block;
 }
+
+nav {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-size: 13px;
+  color: black;
+}
