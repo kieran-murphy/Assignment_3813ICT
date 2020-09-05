@@ -31,7 +31,7 @@
   </div>
   <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
-      <li><a (click)="logout()" href="" routerLinkActive="active">Login</a></li>
+      <li><a (click)="logout()" href="" routerLinkActive="active">Logout</a></li>
       <li><a routerLink="/account" routerLinkActive="active">Account</a></li>
       <li><a routerLink="/chat" routerLinkActive="active">Chat</a></li>
       
@@ -53,9 +53,9 @@
         <h2>Birthday: </h2><p>{{birthdate}}</p>
         <h2>Age: </h2><p>{{age}}</p>
 
-        <a href="/account">Update My Info</a>
+        <a href="/account"><button class="button ui-button-icon-primary">Edit</button></a>
         <br>
         <br>
-        <div *ngIf="session"><a (click)="logout()" href=""><button class="button ui-button-icon-primary">Logout</button></a></div>
+<!--        <div *ngIf="session"><a (click)="logout()" href=""><button class="button ui-button-icon-primary">Logout</button></a></div> -->
       </div>
 
