@@ -1,33 +1,39 @@
+
+
 module.exports = function(req, res) {
 
   let userArray = [
   {
     'userid': 1,
-    'username': 'abc',
+    'username': 'super',
     'role': 'Super Admin',
-    'email': 'abc@com.au',
+    'email': 'super@gmail.com',
     'password': '123',
     'valid': null
   },
   {
     'userid': 2,
-    'username': 'person',
-    'role': 'Super Admin',
-    'email': 'person@gmail.com',
-    'password': 'password',
+    'username': 'abc',
+    'role': 'Group Admin',
+    'email': 'abc@com.au',
+    'password': '123',
     'valid': null
   },
   {
     'userid': 3,
     'username': 'john',
-    'role': 'Super Admin',
+    'role': 'Group Admin',
     'email': 'john@gmail.com',
-    'password': 'wordpass',
+    'password': 'password',
     'valid': null
   }
 ];
 
+
 let i = userArray.findIndex(user => ((user.email == req.body.username) && (user.password == req.body.password)));
+//let i = userArray.findIndex(user => ((user.email == req.body.username) && (user.password == req.body.password)));
+
+
 
 if (i == -1) {
   res.send({'valid': false});
