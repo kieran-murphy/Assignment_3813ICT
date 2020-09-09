@@ -58,8 +58,13 @@ Github is one of the best version control systems available to developers and wa
 # Angular components architecture
 
 login component: processes the log-in authentication based on a series of data in JSON format 
+
 account component: accepts changes to the current session storage username, email and admin priveledges
+
 profile component: retrieves current session storage and display username, email and admin priveledges
+
 chat component: accepts chat messages, processes them through the sockets service and displays messages in real time
+
 sockets service: the service that sends messages from the chat component to the NodeJs server side and retrieves messages for display on the same chat component
+
 server.js server: handles back end processing for the project, allowing user authentication and real time chat tp function
