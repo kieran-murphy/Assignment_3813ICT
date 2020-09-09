@@ -45,17 +45,26 @@
 
 
 <div class="container">
-        <h1>Welcome {{username}}!</h1>
-
-    
-        <h2>Username: </h2><p>{{username}}</p>
-        <h2>Email: </h2><p>{{email}}</p>
- <!--       <h2>Birthday: </h2><p>{{birthdate}}</p> -->
-        <h2>Role: </h2><p>{{role}}</p>
-
-        <a href="/account"><button class="button ui-button-icon-primary">Edit</button></a>
+        <h2>Welcome {{username}}!</h2>
         <br>
+    
+        <h4>Username: </h4><p>{{username}}</p>
+        <br>
+        <h4>Email: </h4><p>{{email}}</p>
+        <br>
+ <!--       <h2>Birthday: </h2><p>{{birthdate}}</p> -->
+        <h4>Role: </h4><p>{{role}}</p>
+        <br>
+
+        
+        <br>
+        <div class="form-group">
+            <a href="/account"><button class="button button 3">Edit</button></a>
+            
+        </div>
         <br>
 <!--        <div *ngIf="session"><a (click)="logout()" href=""><button class="button ui-button-icon-primary">Logout</button></a></div> -->
       </div>
+
+
 

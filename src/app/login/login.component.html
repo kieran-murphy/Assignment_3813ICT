@@ -44,20 +44,35 @@
   <h3 class="header">Login</h3>
   <div id="formContent">
       <br>
+      <br>
 
 
 
     <form>
-      <input type="text" [(ngModel)]="userDetails.username" id="login" name="login" placeholder="Email">
+      
+      <div class="wrap-input100 validate-input m-b-16">
+          <input class="input100" type="text" [(ngModel)]="userDetails.username" id="login" name="login" placeholder="Email">
+          <span class="focus-input100"></span>
+        </div>
       <br>
       <br>
-      <input type="password" [(ngModel)]="userDetails.password" id="password" name="login" placeholder="Password">
+      <div class="wrap-input100 validate-input m-b-16">
+          <input class="input100" type="password" [(ngModel)]="userDetails.password" id="password" name="login" placeholder="Password">
+          <span class="focus-input100"></span>
+        </div>
+      
       <br>
       <br>
-      <input (click)="loginfunc()" type="submit" value="Log In">
+      <div class="container-login100-form-btn m-t-17">
+        <input class="login100-form-btn" (click)="loginfunc()" type="submit" value="Log In">
+      </div>
+      
     </form>
 
   
 
   </div>
 </div>
+
+
+  

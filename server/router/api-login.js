@@ -1,5 +1,3 @@
-
-
 module.exports = function(req, res) {
 
   let userArray = [
@@ -27,12 +25,17 @@ module.exports = function(req, res) {
     'password': 'password',
     'valid': null
   }
-];
+]; 
+
+
+//let i = userArray.findIndex(user => ((user.email == req.body.username) && (user.password == req.body.password)));
+//let i = userArray.findIndex(user => ((user.email == req.body.username) && (user.password == req.body.password)));
 
 
 let i = userArray.findIndex(user => ((user.email == req.body.username) && (user.password == req.body.password)));
-//let i = userArray.findIndex(user => ((user.email == req.body.username) && (user.password == req.body.password)));
 
+
+//console.log(data1.myarray[0].role);
 
 
 if (i == -1) {

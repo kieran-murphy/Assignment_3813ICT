@@ -45,24 +45,46 @@
   <h3 class="header">Edit</h3>
   <div id="formContent">
     <br>
+    <br>
 
 
 
     <form>
-      <label for="username">Username</label>
-      <input type="text" [(ngModel)]="username" id="username" name="username" ngModel placeholder="Username" required>
-      <br>
-      <label for="email">Email</label>
-      <input type="text" [(ngModel)]="email" id="email" name="email" placeholder="Email" required>
-      <br>
+      <h4 for="username">Username:</h4>
+       
+      <div class="wrap-input100 validate-input m-b-16">
+          <input class="input100" type="text" [(ngModel)]="username" id="username" name="username" ngModel placeholder="Username" required>
+          <span class="focus-input100"></span>
+        </div>
+        <br>
+      <h4 for="email">Email:</h4>
+
+      <div class="wrap-input100 validate-input m-b-16">
+          <input class="input100" type="text" [(ngModel)]="email" id="email" name="email" placeholder="Email" required>
+          <span class="focus-input100"></span>
+        </div>
+        <br>
       <!-- <label for="birthdate">Birthday</label>
       <input type="text" [(ngModel)]="birthdate" id="birthdate" name="birthdate" placeholder="Birth Date" required>
       <br> -->
-      <label for="role">Role</label>
-      <input type="text" [(ngModel)]="role" id="role" name="login" placeholder="Role" required>
-      <br>
-      <input (click)="updateDetails()" type="submit" value="Save">
-    </form>
+      <h4 for="role">Role:</h4>
+      
+      <div class="wrap-input100 validate-input m-b-16">
+          <!-- <input class="input100" type="text" [(ngModel)]="role" id="role" name="login" placeholder="Role" required> -->
+          <select class="input100" id="role" name="login" [(ngModel)]="role">
+              <option value="Group Admin">Group Admin</option>
+              <option value="Super Admin" selected>Super Admin</option>
+              <option value="Group Assis">Group Assis</option>
+              
+            </select>
+          <span class="focus-input100"></span>
+        </div>
+        
+        <br>
+      <div class="container-login100-form-btn m-t-17">
+          <input class="login100-form-btn" (click)="updateDetails()" type="submit" value="Save">
+        </div>
+      </form>
 
 
 

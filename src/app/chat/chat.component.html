@@ -45,20 +45,28 @@
 <div class="container">
     <form>
         <div class ="form group">
-            <h3 for="messagecontent">New Message</h3>
+            
             <br>
-            <br>
-            <input type="text" [(ngModel)]="messagecontent" name="messagecontent" id="messagecontent" class="form-control"/>
+            
+            <div class="wrap-input100 validate-input m-b-16">
+                <input class="input100" type="text" [(ngModel)]="messagecontent" name="messagecontent" id="messagecontent" ngModel placeholder="New Message"/>
+                <span class="focus-input100"></span>
+              </div>
         </div>
-        <br>
+       
         <div class="form-group">
-            <button (click)="chat()" class="btn btn-primary">Chat</button>
+            <button (click)="chat()" class="button button 3">Chat</button>
+            
         </div>
+        
     </form> 
     <br>
     <br>
-    <h3>Chat Messages</h3>
-    <ul>
-        <li *ngFor="let message of messages">{{username}}: {{message}}</li>
-    </ul>    
+    <h2>Chat Messages:</h2>
+    <br>
+    <br>
+  
+    <h4>
+        <li *ngFor="let message of messages"><p>{{username}}:</p> {{message}} </li>
+    </h4>    
 </div>

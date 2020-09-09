@@ -1,8 +1,10 @@
+'use strict';
 
-var fs = require('fs');
-var data = fs.readFileSync("users.json", "utf8");
-var data1 = JSON.parse(data);
+let jsonData = require('./users.json');
 
-console.log(data1.myarray[1].username);
+console.log(jsonData.myarray[0].username);
+
+
+//console.log(data1.myarray[0].role);
 
 

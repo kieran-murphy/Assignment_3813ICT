@@ -17,7 +17,7 @@
     }, {
       "userid": 3,
       "username": "john",
-      "role": "Group Admin",
+      "role": "Group Assis",
       "email": "john@gmail.com",
       "password": "password",
       "valid": null
