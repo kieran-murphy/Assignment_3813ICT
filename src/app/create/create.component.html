@@ -43,7 +43,7 @@
 
 
 <div class="container">
-  <h3 class="header">Edit</h3>
+  <h3 class="header">Create</h3>
   <div id="formContent">
     <br>
     <br>
@@ -54,25 +54,23 @@
       <h4 for="username">Username:</h4>
        
       <div class="wrap-input100 validate-input m-b-16">
-          <input class="input100" type="text" [(ngModel)]="username" id="username" name="username" ngModel placeholder="Username" required>
+          <input class="input100" type="text" [(ngModel)]="newusername" id="username" name="username" ngModel placeholder="" required>
           <span class="focus-input100"></span>
         </div>
         <br>
       <h4 for="email">Email:</h4>
 
       <div class="wrap-input100 validate-input m-b-16">
-          <input class="input100" type="text" [(ngModel)]="email" id="email" name="email" placeholder="Email" required>
+          <input class="input100" type="text" [(ngModel)]="newemail" id="email" name="email" placeholder="" required>
           <span class="focus-input100"></span>
         </div>
         <br>
-      <!-- <label for="birthdate">Birthday</label>
-      <input type="text" [(ngModel)]="birthdate" id="birthdate" name="birthdate" placeholder="Birth Date" required>
-      <br> -->
+      
       <h4 for="role">Role:</h4>
       
       <div class="wrap-input100 validate-input m-b-16">
           <!-- <input class="input100" type="text" [(ngModel)]="role" id="role" name="login" placeholder="Role" required> -->
-          <select class="input100" id="role" name="login" [(ngModel)]="role">
+          <select class="input100" id="role" name="login" [(ngModel)]="newrole">
               <option value="Group Admin">Group Admin</option>
               <option value="Super Admin">Super Admin</option>
               <option value="Group Assis">Group Assis</option>
@@ -84,7 +82,7 @@
         
         <br>
       <div class="container-login100-form-btn m-t-17">
-          <input class="login100-form-btn" (click)="updateDetails()" type="submit" value="Save">
+          <input class="login100-form-btn" (click)="createUser()" type="submit" value="Create">
         </div>
       </form>
 
@@ -92,3 +90,44 @@
 
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <h3 class="header">Users</h3>
+
+
+        <br>
+    
+        <b>Username: </b><p>{{newusername}}</p>
+        <br>
+        <b>Email: </b><p>{{newemail}}</p>
+        <br>
+        <b>Role: </b><p>{{newrole}}</p>
+        <br>
+
+</div><br>
+<br>
+<br>
+
+
+<div class="container">
+    <h3 class="header">Groups</h3>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <h3 class="header">Channels</h3>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>

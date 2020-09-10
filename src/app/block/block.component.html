@@ -31,10 +31,10 @@
   </div>
   <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
-        <li><a (click)="logout()" href="" routerLinkActive="active">Logout</a></li>
-        <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
-        <li><a routerLink="/chat" routerLinkActive="active">Chat</a></li>
-        <li><a (click)="valid()" routerLinkActive="active">Create</a></li>
+      <li><a (click)="logout()" href="" routerLinkActive="active">Logout</a></li>
+      <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+      <li><a routerLink="/chat" routerLinkActive="active">Chat</a></li>
+      <li><a (click)="valid()" routerLinkActive="active">Create</a></li>
       
     </ul>
     
@@ -46,27 +46,8 @@
 
 
 <div class="container">
-        <h2>Welcome {{username}}!</h2>
+        <h2>You dont have permissions for this page :(</h2>
         <br>
-    
-        <h4>Username: </h4><p>{{username}}</p>
         <br>
-        <h4>Email: </h4><p>{{email}}</p>
-        <br>
- <!--       <h2>Birthday: </h2><p>{{birthdate}}</p> -->
-        <h4>Role: </h4><p>{{role}}</p>
-        <br>
-
-        
-        <br>
-        <div class="form-group">
-            
-          <button class="button button 3" ><a (click)="valid2()" routerLinkActive="active">Edit</a></button>  
-           
-        </div>
-        <br>
-<!--        <div *ngIf="session"><a (click)="logout()" href=""><button class="button ui-button-icon-primary">Logout</button></a></div> -->
-      </div>
-
-
-
+        <h2>You must be an admin to access this</h2>
+</div>

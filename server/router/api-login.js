@@ -31,13 +31,13 @@ module.exports = function(req, res) {
 //let i = userArray.findIndex(user => ((user.email == req.body.username) && (user.password == req.body.password)));
 //let i = userArray.findIndex(user => ((user.email == req.body.username) && (user.password == req.body.password)));
 
-
+//retrieves username and password for authentication from userArray 
 let i = userArray.findIndex(user => ((user.email == req.body.username) && (user.password == req.body.password)));
 
 
-//console.log(data1.myarray[0].role);
 
 
+// checks if username and password are valid for login
 if (i == -1) {
   res.send({'valid': false});
 } else {

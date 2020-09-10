@@ -21,6 +21,8 @@ export class ChatComponent implements OnInit {
   userid = sessionStorage.getItem('userid');
   username = sessionStorage.getItem('username');
   role = sessionStorage.getItem('role');
+  channel = sessionStorage.getItem('channel');
+  group = sessionStorage.getItem('group');
   //birthdate = sessionStorage.getItem('birthdate');
   //age = sessionStorage.getItem('age');
   email = sessionStorage.getItem('email');
@@ -40,6 +42,7 @@ export class ChatComponent implements OnInit {
   } 
 
   initIoConnection() {
+    
     this.socketService.initSocket();
     this.ioConnection = this.socketService.onMessage()
     
@@ -49,6 +52,7 @@ export class ChatComponent implements OnInit {
       });
   }
 
+  //takes the input from messagecontent, and sends it to be pushed to an array of chat messages
   chat() {
 
     if(this.messagecontent){
@@ -64,13 +68,33 @@ export class ChatComponent implements OnInit {
   constructor(private socketService:SocketService, private router: Router) {}
 
   
-
+//clears the sessions details and logs out the user returning them to the login page
   logout() {
     console.log('clicked btn');
     this.session = false;
     sessionStorage.clear();
     localStorage.clear();
     this.router.navigateByUrl('');
+  }
+
+
+  //checks that the user is the appropriate role to access this page, if not sends them to a page with access denied message
+  valid() {
+    if (sessionStorage.getItem('role') == 'User') {
+      
+      this.router.navigateByUrl('/block');
+    } else {
+      this.router.navigateByUrl('/create');
+    }
+    
+  }
+
+  //alerts the user that they have successfully joined another group and or channel
+  join() {
+    
+    alert('Sucessfully joined ' + this.group + ' ' +this.channel);
+    
+    
   }
 
 }

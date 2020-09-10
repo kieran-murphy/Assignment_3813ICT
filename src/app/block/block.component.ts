@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-account',
-  templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css']
+  selector: 'app-block',
+  templateUrl: './block.component.html',
+  styleUrls: ['./block.component.css']
 })
-
-//defines user details stored in session that are used on the page
-export class AccountComponent implements OnInit {
+export class BlockComponent implements OnInit {
 
   username = sessionStorage.getItem('username');
+  //birthdate = sessionStorage.getItem('birthdate');
   age = sessionStorage.getItem('age');
   email = sessionStorage.getItem('email');
   role = sessionStorage.getItem('role');
@@ -18,7 +17,6 @@ export class AccountComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  //checks to see if there is information stored in session to start the session
   ngOnInit(){
     if (sessionStorage.length == 0){
       this.session = false;
@@ -32,19 +30,12 @@ export class AccountComponent implements OnInit {
   public updateDetails() {
 
     sessionStorage.setItem('username', this.username.toString());
+    //sessionStorage.setItem('birthdate', this.birthdate.toString());
+    //sessionStorage.setItem('age', this.age.toString());
     sessionStorage.setItem('email', this.email.toString());
     sessionStorage.setItem('role', this.role.toString());
     
     this.router.navigateByUrl('profile');
-  }
-
-  //clears the sessions details and logs out the user returning them to the login page
-  logout() {
-    console.log('logged out');
-    this.session = false;
-    sessionStorage.clear();
-    localStorage.clear();
-    this.router.navigateByUrl('');
   }
 
 
@@ -58,4 +49,14 @@ export class AccountComponent implements OnInit {
     }
     
   }
+//clears the sessions details and logs out the user returning them to the login page
+  logout() {
+    console.log('logged out');
+    this.session = false;
+    sessionStorage.clear();
+    localStorage.clear();
+    this.router.navigateByUrl('');
+  }
 }
+
+

@@ -35,6 +35,8 @@ export class LoginComponent implements OnInit {
 
   }
 
+  
+//checks the the route /api/auth that the user has been authenticated and sets the values for the user or sends a message that login details are incorrect
   public loginfunc() {
 
     this.httpClient.post(BACKEND_URL + '/api/auth', this.userDetails, httpOptions)
@@ -43,8 +45,6 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('userid', data.userid.toString());
         sessionStorage.setItem('username', data.username.toString());
         sessionStorage.setItem('role', data.role.toString());
-        //sessionStorage.setItem('birthdate', data.birthdate.toString());
-        //sessionStorage.setItem('age', data.age.toString());
         sessionStorage.setItem('email', data.email.toString());
         this.httpClient.post(BACKEND_URL + '/api/login-success', data, httpOptions)
         .subscribe((m: any) => {});

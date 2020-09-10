@@ -10,19 +10,22 @@ import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './profile/profile.component';
 import { SocketService } from './services/socket.service';
-//import { TestComponent } from './test/test.component';
+
 
 
 import { ChatComponent } from './chat/chat.component';
+import { BlockComponent } from './block/block.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AccountComponent,
-    //TestComponent,
     ChatComponent,
-    ProfileComponent
+    ProfileComponent,
+    BlockComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
