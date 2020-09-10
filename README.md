@@ -63,6 +63,8 @@ account component: accepts changes to the current session storage username, emai
 
 profile component: retrieves current session storage and display username, email and admin priveledges
 
+create component: allows the creation of new users, groups and channels
+
 chat component: accepts chat messages, processes them through the sockets service and displays messages in real time
 
 sockets service: the service that sends messages from the chat component to the NodeJs server side and retrieves messages for display on the same chat component
