@@ -12,10 +12,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { SocketService } from './services/socket.service';
 
 
-
 import { ChatComponent } from './chat/chat.component';
 import { BlockComponent } from './block/block.component';
 import { CreateComponent } from './create/create.component';
+
+import { ListProductsComponent } from "./list-products/list-products.component";
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { CreateComponent } from './create/create.component';
     ChatComponent,
     ProfileComponent,
     BlockComponent,
+    ListProductsComponent,
     CreateComponent
   ],
   imports: [

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductService } from "../services/product.service";
 
 @Component({
   selector: 'app-create',
@@ -22,9 +23,21 @@ export class CreateComponent implements OnInit {
 
   session = null;
 
-  constructor(private router: Router) { }
+  products: any;
 
-  ngOnInit(){
+  addId = 0;
+  addPname = "";
+  addDescription = "";
+  addPrice = 0;
+  addUnits = 0;
+
+  
+  constructor(private productService: ProductService, private router: Router) {}
+
+  ngOnInit() {
+    this.productService.getList().subscribe(data => {
+      this.products = data;
+    });
     if (sessionStorage.length == 0){
       this.session = false;
       this.router.navigateByUrl('');
@@ -32,6 +45,37 @@ export class CreateComponent implements OnInit {
       this.session = true;
     }
   }
+
+  deleteproduct(id) {
+    this.productService.deleteProduct(id).subscribe(data => {
+      if (data == true) {
+        this.productService.getList().subscribe(data2 => {
+          this.products = data2;
+        });
+      }
+    });
+  }
+
+  addItem() {
+    var newProduct = {
+      id: this.addId,
+      name: this.addPname,
+      description: this.addDescription,
+      price: this.addPrice,
+      units: this.addUnits
+    };
+    console.log(newProduct);
+    this.productService.addProduct(newProduct).subscribe(data => {
+      if ((data = true)) {
+        this.router.navigateByUrl("/create");
+        
+      } else {
+        console.log("error");
+      }
+    });
+  }
+
+  
 
   //checks that the user is the appropriate role to access this page, if not sends them to a page with access denied message
   valid() {
@@ -48,8 +92,7 @@ export class CreateComponent implements OnInit {
   public updateDetails() {
 
     sessionStorage.setItem('username', this.username.toString());
-    //sessionStorage.setItem('birthdate', this.birthdate.toString());
-    //sessionStorage.setItem('age', this.age.toString());
+    
     sessionStorage.setItem('email', this.email.toString());
     sessionStorage.setItem('role', this.role.toString());
     
@@ -73,3 +116,5 @@ export class CreateComponent implements OnInit {
     + "\n Role: " + this.newrole);
   }
 }
+
+

@@ -1,5 +1,5 @@
 //defines all the plugins used and retrieves them from their local addresses
-
+const bodyParser = require("body-parser");
 const sockets = require('./sockets.js');
 const lserver = require('./listen.js');
 const express = require('express');
@@ -7,7 +7,8 @@ const app = express();
 const cors = require('cors');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-
+const MongoClient = require("mongodb").MongoClient;
+var ObjectID = require("mongodb").ObjectID;
 
 const PORT = 3000;
 
@@ -19,6 +20,8 @@ let server = http.listen(3000, function () {
 });
 //apply express middleware
 app.use(cors());
+app.use(bodyParser.json());
+const url = "mongodb://localhost:27017";
 
 //implements sockets used for chat
 sockets.connect(io, PORT)
@@ -34,3 +37,22 @@ const path = require('path');
 //defines the routes for authentication and login sucess
 app.post('/api/auth', require('./router/api-login'));
 app.post('/api/login-success', require('./router/login-success'));
+
+
+MongoClient.connect(
+  url,
+  { poolSize: 10, useNewUrlParser: true, useUnifiedTopology: true },
+  function(err, client) {
+    if (err) throw err;
+    const dbName = "week9db";
+    const db = client.db(dbName);
+
+    require("./router/add.js")(db, app);
+    require("./router/list.js")(db, app);
+    require("./router/update.js")(db, app, ObjectID);
+    require("./router/remove.js")(db, app, ObjectID);
+
+    //Start the server listening on port 3000. Outputs message to console once server has started
+    //require("./router/listen.js")(http);
+  }
+);
