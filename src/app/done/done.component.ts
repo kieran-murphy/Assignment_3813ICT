@@ -4,12 +4,12 @@ import { ProductService } from "../services/product.service";
 
 @Component({
   selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  templateUrl: './done.component.html',
+  styleUrls: ['./done.component.css']
 })
 
 //retrieves user information from session storage
-export class CreateComponent implements OnInit {
+export class DoneComponent implements OnInit {
 
   username = sessionStorage.getItem('username');
   age = sessionStorage.getItem('age');
@@ -25,11 +25,11 @@ export class CreateComponent implements OnInit {
 
   products: any;
 
-  addId = "";
-  addUsername = "";
-  addRole = "";
-  addPassword = "";
-  addGroup = "";
+  addId = 0;
+  addPname = "";
+  addDescription = "";
+  addPrice = 0;
+  addUnits = 0;
 
   
   constructor(private productService: ProductService, private router: Router) {}
@@ -59,15 +59,15 @@ export class CreateComponent implements OnInit {
   addItem() {
     var newProduct = {
       id: this.addId,
-      username: this.addUsername,
-      role: this.addRole,
-      password: this.addPassword,
-      group: this.addGroup
+      name: this.addPname,
+      description: this.addDescription,
+      price: this.addPrice,
+      units: this.addUnits
     };
     console.log(newProduct);
     this.productService.addProduct(newProduct).subscribe(data => {
       if ((data = true)) {
-        this.router.navigateByUrl("/done");
+        this.router.navigateByUrl("/create");
         
       } else {
         console.log("error");
@@ -116,5 +116,6 @@ export class CreateComponent implements OnInit {
     + "\n Role: " + this.newrole);
   }
 }
+
 
 

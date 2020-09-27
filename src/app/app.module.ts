@@ -17,6 +17,7 @@ import { BlockComponent } from './block/block.component';
 import { CreateComponent } from './create/create.component';
 
 import { ListProductsComponent } from "./list-products/list-products.component";
+import { DoneComponent } from './done/done.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ListProductsComponent } from "./list-products/list-products.component";
     ProfileComponent,
     BlockComponent,
     ListProductsComponent,
-    CreateComponent
+    CreateComponent,
+    DoneComponent
   ],
   imports: [
     BrowserModule,

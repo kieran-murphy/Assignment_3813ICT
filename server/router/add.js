@@ -7,7 +7,7 @@ module.exports = function(db, app) {
 
     product_new = req.body;
 
-    const product_collection = db.collection("products");
+    const product_collection = db.collection("users");
     product_collection.find({ id: product_new.id }).count((err, count) => {
       if (count == 0) {
         product_collection.insertOne(product_new, (err, dbres) => {

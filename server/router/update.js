@@ -7,7 +7,7 @@ module.exports = function(db, app, ObjectID) {
     productID = req.body.passingid;
 
     var objectid = new ObjectID(productID);
-    const collection = db.collection("products");
+    const collection = db.collection("users");
     collection
       .find({ _id: objectid })
       .limit(1)
@@ -26,7 +26,7 @@ module.exports = function(db, app, ObjectID) {
     console.log(product);
 
     var objectid = new ObjectID(product.objectIDpassing);
-    const collection = db.collection("products");
+    const collection = db.collection("users");
     collection.updateOne(
       { _id: objectid },
       {
@@ -42,6 +42,6 @@ module.exports = function(db, app, ObjectID) {
       }
     );
 
-    console.log(db.collection("products"));
+    console.log(db.collection("users"));
   });
 };

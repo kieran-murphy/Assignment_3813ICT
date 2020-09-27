@@ -6,6 +6,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ChatComponent } from './chat/chat.component';
 import { CreateComponent } from './create/create.component';
 import { BlockComponent } from './block/block.component';
+import { DoneComponent } from './done/done.component';
 import { ListProductsComponent } from './list-products/list-products.component';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'create', component: CreateComponent},
   {path: 'block', component: BlockComponent},
   {path: 'list', component: ListProductsComponent},
+  {path: 'done', component: DoneComponent},
   {path: 'profile', component: ProfileComponent}
 ];
 

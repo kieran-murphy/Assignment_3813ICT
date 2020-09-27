@@ -44,7 +44,7 @@ MongoClient.connect(
   { poolSize: 10, useNewUrlParser: true, useUnifiedTopology: true },
   function(err, client) {
     if (err) throw err;
-    const dbName = "week9db";
+    const dbName = "assignment";
     const db = client.db(dbName);
 
     require("./router/add.js")(db, app);

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Week 4
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+
+  </style>
+</head>
+<nav class="navbar navbar-inverse" style="background-color: black;">
+  <div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>                        
+    </button>
+    
+  </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav">
+        <li><a (click)="logout()" href="" routerLinkActive="active">Logout</a></li>
+        <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+        <li><a routerLink="/chat" routerLinkActive="active">Chat</a></li>
+        <li><a (click)="valid()" routerLinkActive="active">Create</a></li>
+      
+    </ul>
+    
+  </div>
+</div>
+</nav>
+
+
+
+
+<div class="container">
+    <h4 for="group">User Successfully Created!</h4>
+    <br>
+    <br>
+      
+    <div class="container-login100-form-btn m-t-17">
+              
+        <input class="login100-form-btn" routerLink="/create" type="submit" value="Back">
+        
+        </div>
+    
+  </div>

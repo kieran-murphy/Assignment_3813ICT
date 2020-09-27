@@ -4,7 +4,7 @@ module.exports = function(db, app, ObjectID) {
       return res.sendStatus(400);
     }
 
-    const product_collection = db.collection("products");
+    const product_collection = db.collection("users");
     productID = req.body.id;
 
     var objectID = new ObjectID(productID);
