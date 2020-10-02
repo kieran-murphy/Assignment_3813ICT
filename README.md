@@ -74,4 +74,4 @@ server.js server: handles back end processing for the project, allowing user aut
 
 # Running tests with Mocha
 
-To test the chat application, run 'Mocha test.js' in the terminal
+To test the chat application, run `Mocha test.js` in the terminal 
