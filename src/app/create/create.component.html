@@ -41,6 +41,8 @@
 </nav>
 
 
+<!--
+
 
 <div class="container">
   <h3 class="header">Create</h3>
@@ -70,7 +72,7 @@
       <h4 for="role">Role:</h4>
 
       <div class="wrap-input100 validate-input m-b-16">
-        <!-- <input class="input100" type="text" [(ngModel)]="role" id="role" name="login" placeholder="Role" required> -->
+         <input class="input100" type="text" [(ngModel)]="role" id="role" name="login" placeholder="Role" required> 
         <select class="input100" id="role" name="login" [(ngModel)]="newrole">
           <option value="Group Admin">Group Admin</option>
           <option value="Super Admin">Super Admin</option>
@@ -125,53 +127,14 @@
 <br>
 <br>
 
+-->
 
-<div class="container">
-  <h3 class="header">Groups</h3>
 
-</div>
-<br>
-<br>
-<br>
-<br>
-
-<div class="container">
-  <h3 class="header">Channels</h3>
-
-</div>
-
-<br>
-<br>
-<br>
 <br>
 <div class="container">
-  <table class="table">
-    <tr>
-      <th>
-        ID
-      </th>
-      <th>Username</th>
-      <th>Units</th>
-    </tr>
-    
-      <tr style="padding-top:20px;" *ngFor="let product of products">
-      <td>{{ product.id }}</td>
-      <td>{{ product.username }}</td>
-      <td>{{ product.units }}</td>
-      <td>
-        <span class="btn btn-primary" [routerLink]="['/update', product._id]">
-          <i class="fa fa-spinner"></i> Edit</span>
-        &nbsp;
-        <span class="btn btn-primary" (click)="deleteproduct(product._id)"><i class="fa fa-trash"></i> Delete</span>
-      </td>
-    
-    </tr>
-  
-  </table>
-</div>
-<br>
-<br>
-<div class="container">
+    <h3>Create New User</h3>
+    <br>
+    <br>
   <form (submit)="addItem()">
       
       <h4>ID</h4>
@@ -187,11 +150,24 @@
       <input type="text" class="input100" id="addUsername" [(ngModel)]="addUsername" name="addUsername" placeholder="Username"/>
     </div>
     <br>
-    <h4>Role</h4>
+    <h4>Email</h4>
     <div class="wrap-input100 validate-input m-b-16">
       
-      <input type="text" class="input100" id="addDescription" [(ngModel)]="addRole" name="addRole" placeholder="Role"/>
+      <input type="email" class="input100" id="addEmail" [(ngModel)]="addEmail" name="addEmail" placeholder="Email"/>
     </div>
+    <br>
+    <h4>Role</h4>
+    <div class="wrap-input100 validate-input m-b-16">
+        <select class="input100" id="role" name="role" [(ngModel)]="addRole">
+            <option value="Super Admin">Super Admin</option>
+            <option value="Group Admin">Group Admin</option>
+            <option value="Group Assis">Group Assis</option>
+            <option value="User">User</option>
+  
+          </select>
+      <!-- <input type="text" class="input100" id="addDescription" [(ngModel)]="addRole" name="addRole" placeholder="Role"/>
+      -->
+      </div>
     <br>
     <h4>Password</h4>
     <div class="wrap-input100 validate-input m-b-16">
@@ -212,3 +188,42 @@
 
   </form>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="container">
+    <h3>Users</h3>
+    <br>
+    <br>
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+        <th>Username</th>
+        <th>Role</th>
+      </tr>
+      
+        <tr style="padding-top:20px;" *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.username }}</td>
+        <td>{{ product.role }}</td>
+        <td>
+          <span class="btn btn-primary" [routerLink]="['/update', product._id]">
+            <i class="fa fa-spinner"></i> Edit</span>
+          &nbsp;
+          <span class="btn btn-primary" (click)="deleteproduct(product._id)"><i class="fa fa-trash"></i> Delete</span>
+        </td>
+      
+      </tr>
+    
+    </table>
+  </div>
+
+  <br>
+  <br>

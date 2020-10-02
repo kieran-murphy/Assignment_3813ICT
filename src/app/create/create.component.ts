@@ -27,6 +27,7 @@ export class CreateComponent implements OnInit {
 
   addId = "";
   addUsername = "";
+  addEmail = "";
   addRole = "";
   addPassword = "";
   addGroup = "";
@@ -60,6 +61,7 @@ export class CreateComponent implements OnInit {
     var newProduct = {
       id: this.addId,
       username: this.addUsername,
+      email: this.addEmail,
       role: this.addRole,
       password: this.addPassword,
       group: this.addGroup

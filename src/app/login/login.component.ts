@@ -1,6 +1,7 @@
 import { Component,  OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ProductService } from "../services/product.service";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -16,8 +17,9 @@ const BACKEND_URL = 'http://localhost:3000';
 })
 
 export class LoginComponent implements OnInit {
+  products: any;
 
-  constructor(private router: Router, private httpClient: HttpClient) {}
+  constructor(private router: Router, private httpClient: HttpClient, private productService: ProductService) {}
 
   email = '';
   password = '';
@@ -32,6 +34,11 @@ export class LoginComponent implements OnInit {
     } else {
       this.session = false;
     }
+    
+    this.productService.getList().subscribe(data => {
+      this.products = data;
+    });
+    
 
   }
 
@@ -56,3 +63,4 @@ export class LoginComponent implements OnInit {
     });
   }
 }
+
