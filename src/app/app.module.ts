@@ -16,7 +16,6 @@ import { ChatComponent } from './chat/chat.component';
 import { BlockComponent } from './block/block.component';
 import { CreateComponent } from './create/create.component';
 
-import { ListProductsComponent } from "./list-products/list-products.component";
 import { DoneComponent } from './done/done.component';
 
 
@@ -28,7 +27,6 @@ import { DoneComponent } from './done/done.component';
     ChatComponent,
     ProfileComponent,
     BlockComponent,
-    ListProductsComponent,
     CreateComponent,
     DoneComponent
   ],

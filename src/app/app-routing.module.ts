@@ -7,7 +7,7 @@ import { ChatComponent } from './chat/chat.component';
 import { CreateComponent } from './create/create.component';
 import { BlockComponent } from './block/block.component';
 import { DoneComponent } from './done/done.component';
-import { ListProductsComponent } from './list-products/list-products.component';
+
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -15,7 +15,6 @@ const routes: Routes = [
   {path: 'chat', component: ChatComponent},
   {path: 'create', component: CreateComponent},
   {path: 'block', component: BlockComponent},
-  {path: 'list', component: ListProductsComponent},
   {path: 'done', component: DoneComponent},
   {path: 'profile', component: ProfileComponent}
 ];

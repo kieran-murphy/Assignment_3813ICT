@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { SocketService } from '../services/socket.service';
 import { FormsModule } from '@angular/forms';
+import { ProductService } from "../services/product.service";
 
 @Component({
   selector: 'app-chat',
@@ -28,10 +29,16 @@ export class ChatComponent implements OnInit {
   email = sessionStorage.getItem('email');
   session = null;
 
-  
+
+  products: any;
+  addChat = "";
 
   
+
   ngOnInit() {
+    this.productService.getList().subscribe(data => {
+      this.products = data;
+    });
     this.initIoConnection();
     if (sessionStorage.length == 0){
       this.session = false;
@@ -65,8 +72,8 @@ export class ChatComponent implements OnInit {
 
   }
   
-  constructor(private socketService:SocketService, private router: Router) {}
-
+  constructor(private socketService:SocketService, private productService: ProductService, private router: Router) {}
+  
   
 //clears the sessions details and logs out the user returning them to the login page
   logout() {
@@ -97,6 +104,24 @@ export class ChatComponent implements OnInit {
     
   }
 
+  addItem() {
+    var newMessage = {
+      chat: this.addChat,
+      
+    };
+    console.log(newMessage);
+    this.productService.addProduct(newMessage).subscribe(data => {
+      if ((data = true)) {
+        this.router.navigateByUrl("/done");
+        
+      } else {
+        console.log("error");
+      }
+    });
+  }
+
 }
+
+
 
 
