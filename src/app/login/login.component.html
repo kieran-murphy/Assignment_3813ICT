@@ -86,18 +86,16 @@
         <th>
           ID
         </th>
-        <th>Username</th>
-        <th>Role</th>
+        <th>Email</th>
+        <th>Password</th>
       </tr>
       
         <tr style="padding-top:20px;" *ngFor="let product of products">
         <td>{{ product.id }}</td>
-        <td>{{ product.username }}</td>
-        <td>{{ product.role }}</td>
+        <td>{{ product.email }}</td>
+        <td>{{ product.password }}</td>
         <td>
-          <span class="btn btn-primary" [routerLink]="['/update', product._id]">
-            <i class="fa fa-spinner"></i> Edit</span>
-          &nbsp;
+          
           <span class="btn btn-primary" (click)="deleteproduct(product._id)"><i class="fa fa-trash"></i> Delete</span>
         </td>
       
