@@ -70,3 +70,8 @@ chat component: accepts chat messages, processes them through the sockets servic
 sockets service: the service that sends messages from the chat component to the NodeJs server side and retrieves messages for display on the same chat component
 
 server.js server: handles back end processing for the project, allowing user authentication and real time chat tp function
+
+
+# Running tests with Mocha
+
+To test the chat application, run `Mocha test.js` in the terminal 
