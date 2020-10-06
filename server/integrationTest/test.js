@@ -10,11 +10,12 @@ let id = '';
 //require('../app.js');
 chai.use(chaiHttp);
 
+//declares the before and after conditions for the test
 describe('Server test', () => {
   before(() => { console.log('before test'); });
   after(() => { console.log('after test'); });
 
-  
+  //test for /list which checks if it has a status of 200
   describe('Test Route 1 - get product list', () => {
     it('Test Case 1 - should have status of 200', (done) => {
       chai.request(url)
@@ -24,6 +25,7 @@ describe('Server test', () => {
             done();
           });
     });
+    //test for /list which checks if it is an array
     it('Test Case 2 - should exist and be an array', (done) => {
       chai.request(url)
           .get('/list')
@@ -36,21 +38,9 @@ describe('Server test', () => {
     });
   });
 
-  describe('/list', () => {
-    it('it should GET all the products', (done) =>{
-      chai.request(url)
-          .get('/list')
-          .end((err, res) => {
-            res.should.have.status(200);
-            res.body.should.be.a('array');
-
-            done();
-          });
-    });
-  });
-
-  describe('/add', () => {
-    it('it should insert a doc', (done) => {
+//test for /add route which adds data
+  describe('Test route 2 - adding items ', () => {
+    it('Test Case 1 - it should insert a doc', (done) => {
       chai.request(url).post('/add').type('form')
           .send({ 'name': 'Kieran', 'id': 7271 })
               .end((err, res) => {

@@ -214,9 +214,9 @@
         <td>{{ product.username }}</td>
         <td>{{ product.role }}</td>
         <td>
-          <span class="btn btn-primary" [routerLink]="['/update', product._id]">
-            <i class="fa fa-spinner"></i> Edit</span>
-          &nbsp;
+          <!--<span class="btn btn-primary" [routerLink]="['/update', product._id]">
+            <i class="fa fa-spinner"></i> Edit</span> 
+          &nbsp; -->
           <span class="btn btn-primary" (click)="deleteproduct(product._id)"><i class="fa fa-trash"></i> Delete</span>
         </td>
       

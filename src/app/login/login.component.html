@@ -77,32 +77,7 @@
 <br>
 <br>
 -->
-<div class="container">
-    <h3>Users</h3>
-    <br>
-    <br>
-    <table class="table">
-      <tr>
-        <th>
-          ID
-        </th>
-        <th>Email</th>
-        <th>Password</th>
-      </tr>
-      
-        <tr style="padding-top:20px;" *ngFor="let product of products">
-        <td>{{ product.id }}</td>
-        <td>{{ product.email }}</td>
-        <td>{{ product.password }}</td>
-        <td>
-          
-          <span class="btn btn-primary" (click)="deleteproduct(product._id)"><i class="fa fa-trash"></i> Delete</span>
-        </td>
-      
-      </tr>
-    
-    </table>
-  </div>
+
 
   <br>
   <br>
