@@ -24,8 +24,6 @@ export class ChatComponent implements OnInit {
   role = sessionStorage.getItem('role');
   channel = sessionStorage.getItem('channel');
   group = sessionStorage.getItem('group');
-  //birthdate = sessionStorage.getItem('birthdate');
-  //age = sessionStorage.getItem('age');
   email = sessionStorage.getItem('email');
   session = null;
 

@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
         .subscribe((m: any) => {});
         this.router.navigateByUrl('profile');
       } else {
-        alert('Incorrect username or password');
+        alert('Incorrect username or password \nPlease try again!');
       }
 
     });

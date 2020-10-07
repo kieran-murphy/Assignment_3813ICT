@@ -57,7 +57,7 @@ export class CreateComponent implements OnInit {
       }
     });
   }
-
+//creates a new item using the values entered by the user
   addItem() {
     var newProduct = {
       id: this.addId,
@@ -68,7 +68,10 @@ export class CreateComponent implements OnInit {
       group: this.addGroup,
       channel: this.addChannel
     };
+    //prints the values of the new item
     console.log(newProduct);
+    /*checks if data is "true" by subscribing to the addProduct function from productService, and if true takes the user
+    to the 'done' page, if not prints an error to the console */
     this.productService.addProduct(newProduct).subscribe(data => {
       if ((data = true)) {
         this.router.navigateByUrl("/done");

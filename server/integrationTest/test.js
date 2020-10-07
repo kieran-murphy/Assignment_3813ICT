@@ -4,7 +4,7 @@ const assert = require('assert'),
       chaiHttp = require('chai-http'),
       should = chai.should();
 
-const fakeObjId = '5d00cf000d000b0e0000dbdf';
+//const fakeObjId = '5d00cf000d000b0e0000dbdf';
 let id = '';
 chai.use(chaiHttp);
 
@@ -38,13 +38,26 @@ describe('Server test', () => {
 
 //test for /add route which adds data
   describe('Test route 2 - adding items ', () => {
-    it('Test Case 1 - it should insert a doc', (done) => {
+    it('Test Case 1 - it should insert an item', (done) => {
       chai.request(url).post('/add').type('form')
           .send({ 'name': 'Kieran', 'id': 7271 })
               .end((err, res) => {
                 res.should.have.status(200);
-                //res.body.should.have.property('name');
-                //res.body.should.have.property('id');
+                
+                console.log(res.body);
+                done();
+              });
+    });
+  });
+
+  //test for /remove route which deletes data
+  describe('Test route 3 - removing items ', () => {
+    it('Test Case 1 - it should delete an item', (done) => {
+      chai.request(url).post('/remove').type('form')
+          .deleteOne({ 'id': 7271 })
+              .end((err, res) => {
+                res.should.have.status(200);
+                
                 console.log(res.body);
                 done();
               });
