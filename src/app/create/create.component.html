@@ -41,93 +41,7 @@
 </nav>
 
 
-<!--
 
-
-<div class="container">
-  <h3 class="header">Create</h3>
-  <div id="formContent">
-    <br>
-    <br>
-
-
-
-    <form>
-      <h4 for="username">Username:</h4>
-
-      <div class="wrap-input100 validate-input m-b-16">
-        <input class="input100" type="text" [(ngModel)]="newusername" id="username" name="username" ngModel
-          placeholder="" required>
-        <span class="focus-input100"></span>
-      </div>
-      <br>
-      <h4 for="email">Email:</h4>
-
-      <div class="wrap-input100 validate-input m-b-16">
-        <input class="input100" type="text" [(ngModel)]="newemail" id="email" name="email" placeholder="" required>
-        <span class="focus-input100"></span>
-      </div>
-      <br>
-
-      <h4 for="role">Role:</h4>
-
-      <div class="wrap-input100 validate-input m-b-16">
-         <input class="input100" type="text" [(ngModel)]="role" id="role" name="login" placeholder="Role" required> 
-        <select class="input100" id="role" name="login" [(ngModel)]="newrole">
-          <option value="Group Admin">Group Admin</option>
-          <option value="Super Admin">Super Admin</option>
-          <option value="Group Assis">Group Assis</option>
-          <option value="User">User</option>
-
-        </select>
-        <span class="focus-input100"></span>
-      </div>
-      <br>
-      <h4 for="password">Password:</h4>
-
-      <div class="wrap-input100 validate-input m-b-16">
-        <input class="input100" type="text" [(ngModel)]="newpassword" id="password" name="email" placeholder=""
-          required>
-        <span class="focus-input100"></span>
-      </div>
-      <br>
-
-      <br>
-      <div class="container-login100-form-btn m-t-17">
-        <input class="login100-form-btn" (click)="createUser()" type="submit" value="Create">
-      </div>
-    </form>
-
-
-
-  </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-
-<div class="container">
-  <h3 class="header">Users</h3>
-
-
-  <br>
-
-  <b>Username: </b>
-  <p>{{newusername}}</p>
-  <br>
-  <b>Email: </b>
-  <p>{{newemail}}</p>
-  <br>
-  <b>Role: </b>
-  <p>{{newrole}}</p>
-  <br>
-
-</div><br>
-<br>
-<br>
-
--->
 
 
 <br>
@@ -165,8 +79,7 @@
             <option value="User">User</option>
   
           </select>
-      <!-- <input type="text" class="input100" id="addDescription" [(ngModel)]="addRole" name="addRole" placeholder="Role"/>
-      -->
+     
       </div>
     <br>
     <h4>Password</h4>
@@ -177,8 +90,26 @@
     <br>
     <h4>Group</h4>
     <div class="wrap-input100 validate-input m-b-16">
-      
-      <input type="text" class="input100" id="addGroup" [(ngModel)]="addGroup" name="addGroup" placeholder="Group"/>
+      <select class="input100" id="group" name="group" [(ngModel)]="addGroup">
+          <option value="Group 1">Group 1</option>
+          <option value="Group 2">Group 2</option>
+          <option value="Group 3">Group 3</option>
+          <option value="Admins">Admins</option>
+
+        </select>
+   
+    </div>
+    <br>
+    <h4>Channel</h4>
+    <div class="wrap-input100 validate-input m-b-16">
+      <select class="input100" id="channel" name="channel" [(ngModel)]="addChannel">
+          <option value="Channel 1">Channel 1</option>
+          <option value="Channel 2">Channel 2</option>
+          <option value="Channel 3">Channel 3</option>
+          
+
+        </select>
+   
     </div>
     <br>
     <div class="container-login100-form-btn m-t-17">
@@ -214,9 +145,7 @@
         <td>{{ product.username }}</td>
         <td>{{ product.role }}</td>
         <td>
-          <!--<span class="btn btn-primary" [routerLink]="['/update', product._id]">
-            <i class="fa fa-spinner"></i> Edit</span> 
-          &nbsp; -->
+          
           <span class="btn btn-primary" (click)="deleteproduct(product._id)"><i class="fa fa-trash"></i> Delete</span>
         </td>
       

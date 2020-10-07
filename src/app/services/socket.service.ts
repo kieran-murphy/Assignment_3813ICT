@@ -5,7 +5,7 @@ const SERVER_URL = 'http://localhost:3000';
 @Injectable({
   providedIn: 'root'
 })
-
+//exports the 
 export class SocketService {
   private socket;
   constructor() { }

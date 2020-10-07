@@ -31,6 +31,7 @@ export class CreateComponent implements OnInit {
   addRole = "";
   addPassword = "";
   addGroup = "";
+  addChannel = "";
 
   
   constructor(private productService: ProductService, private router: Router) {}
@@ -64,7 +65,8 @@ export class CreateComponent implements OnInit {
       email: this.addEmail,
       role: this.addRole,
       password: this.addPassword,
-      group: this.addGroup
+      group: this.addGroup,
+      channel: this.addChannel
     };
     console.log(newProduct);
     this.productService.addProduct(newProduct).subscribe(data => {
@@ -94,10 +96,8 @@ export class CreateComponent implements OnInit {
   public updateDetails() {
 
     sessionStorage.setItem('username', this.username.toString());
-    
     sessionStorage.setItem('email', this.email.toString());
     sessionStorage.setItem('role', this.role.toString());
-    
     this.router.navigateByUrl('profile');
   }
 //clears the sessions details and logs out the user returning them to the login page

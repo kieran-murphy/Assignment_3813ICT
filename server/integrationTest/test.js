@@ -6,8 +6,6 @@ const assert = require('assert'),
 
 const fakeObjId = '5d00cf000d000b0e0000dbdf';
 let id = '';
-
-//require('../app.js');
 chai.use(chaiHttp);
 
 //declares the before and after conditions for the test
