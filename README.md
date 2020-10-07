@@ -17,6 +17,21 @@ email: john@gmail.com
 
 password: password
 
+# Instalation and running
+
+To install the chat application, locate the src folder in terminal or cmd and run `npm install`. 
+After installation, the program can be run by using `ng serve` in the same directory.
+
+To start the server, open another terminal window and locate the 'server' folder. Once inside, run `node server.js` to start.
+
+
+
+
+
+# Running tests with Mocha
+
+To test the chat application, run `Mocha test.js` in the terminal
+
 
 # Documentation
 
@@ -72,6 +87,4 @@ sockets service: the service that sends messages from the chat component to the 
 server.js server: handles back end processing for the project, allowing user authentication and real time chat tp function
 
 
-# Running tests with Mocha
-
-To test the chat application, run `Mocha test.js` in the terminal 
+ 
